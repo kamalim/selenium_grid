@@ -14,7 +14,8 @@ Vagrant::Config.run do |config|
         sehub_config.ssh.private_key_path = '/Users/kamalim/.ssh/id_rsa'
         sehub_config.vm.network :hostonly, "192.168.200.10"
         sehub_config.vm.host_name = "se-hub"
-   
+        sehub_config.vm.customize ["modifyvm", :id, "--name", "se-hub"]
+ 
         sehub_config.vm.provision :chef_solo do |chef|
          chef.cookbooks_path = "cookbooks"
          chef.add_recipe("java") 
@@ -29,6 +30,7 @@ Vagrant::Config.run do |config|
         ubuntu1_config.ssh.private_key_path = '/Users/kamalim/.ssh/id_rsa'
         ubuntu1_config.vm.network :hostonly, "192.168.200.11"
         ubuntu1_config.vm.host_name = "ubuntu-1"
+        ubuntu1_config.vm.customize ["modifyvm", :id, "--name", "ubuntu-node"]
 
         ubuntu1_config.vm.provision :chef_solo do |chef|
          chef.cookbooks_path = "cookbooks"
@@ -47,6 +49,7 @@ Vagrant::Config.run do |config|
         win1_config.vm.forward_port 3389, 3390, :name => "rdp", :auto => true
         win1_config.vm.forward_port 5985, 5985, :name => "winrm", :auto => true
         win1_config.vm.network :hostonly, "192.168.200.12"
+        win1_config.vm.customize ["modifyvm", :id, "--name", "win7-node"]
 
         win1_config.vm.provision :chef_solo do |chef|
          chef.cookbooks_path = "cookbooks"
