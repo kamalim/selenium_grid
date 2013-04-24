@@ -1,0 +1,27 @@
+{
+  "capabilities":
+      [
+        {
+          "platform": "LINUX",
+          "browserName": "firefox",
+          "maxInstances": 5,
+          "seleniumProtocol": "WebDriver"
+        },
+        {
+          "platform": "LINUX",
+          "browserName": "chrome",
+          "maxInstances": 5,
+          "seleniumProtocol": "WebDriver"
+        }
+      ],
+  "configuration":
+  {
+    "maxSession": 5,
+    "port": 5555,
+    
+    "register": true,
+    "registerCycle": 5000,
+    "hubPort": 4444,
+    "hubHost": 192.168.200.10
+  }
+}

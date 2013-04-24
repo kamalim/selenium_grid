@@ -1,0 +1,34 @@
+{
+  "capabilities":
+      [
+        {
+          "platform": "WINDOWS",
+          "browserName": "firefox",
+          "maxInstances": 5,
+          "seleniumProtocol": "WebDriver"
+        },
+        {
+          "platform": "WINDOWS",
+          "browserName": "chrome",
+          "maxInstances": 5,
+          "seleniumProtocol": "WebDriver"
+        },
+        {
+          "platform": "WINDOWS",
+          "browserName": "internet explorer",
+          "maxInstances": 1,
+          "seleniumProtocol": "WebDriver"
+        }
+      ],
+  "configuration":
+  {
+    "maxSession": 5,
+    "port": 5555,
+    "host": 192.168.200.12,
+    "register": true,
+    "registerCycle": 5000,
+    "hubPort": 4444,
+    "hubHost": 192.168.200.10
+  }
+}
+
