@@ -1,7 +1,7 @@
 selenium_grid
 =============
 
-This is a selenium grid 2 (2.31) setup using Vagrant and chef-solo.The grid comprises of :
+This is a selenium grid 2 (2.31) setup using Vagrant(1.0) and chef-solo.The grid comprises of :
 
 Hub (A centos 6.3 vm)
 
