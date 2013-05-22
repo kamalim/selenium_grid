@@ -16,6 +16,7 @@ end
 execute "download-chrome" do
   cwd "/opt"
   command "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"	
+  not_if "test -f /opt/google-chrome-stable_current_amd64.deb"
 end
 execute "install-chrome" do
   cwd "/opt"	
@@ -24,6 +25,7 @@ end
 execute "download-chrome-webdriver" do
   cwd "/opt"
   command "wget http://chromedriver.googlecode.com/files/chromedriver2_linux64_0.7.zip"
+  not_if "test -f /opt/chromedriver2_linux64_0.7.zip"
 end
 execute "unzip-chromedriver" do
   cwd "/opt"
